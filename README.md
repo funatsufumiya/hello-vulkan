@@ -2,13 +2,17 @@
 
 ## Build
 
+./build.sh
+
 ```bash
 $ cmake -B build -DEXTERNAL_ALL_BUILD=ON -DCMAKE_BUILD_TYPE=Debug
-$ cmake --build build -j $(nproc)
-# or just specify cores like: -j 8
+$ CORES=4 # or CORES=$(nproc) or CORES=$(sysctl -n hw.logicalcpu)
+$ cmake --build build -j $CORES
 ```
 
 ## Run
+
+./run.sh
 
 ```bash
 $ ./build/hello-vulkan
